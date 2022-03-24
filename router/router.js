@@ -279,7 +279,7 @@ router.delete('/files', authenticateToken,(req, res) => {
 
 router.get("/post",authenticateToken,async(req,res)=>{
   try {
-  const data = await posts.find()
+  const data = await posts.find().limit(5)
   console.log(data)
   res.send(data)
   } catch (error) {
